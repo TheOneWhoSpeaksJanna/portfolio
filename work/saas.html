@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlowTask — Project Management SaaS</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
+body{background:#0f1117;color:#e8eaf0;line-height:1.6}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+header{padding:20px 0;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e2230}
+.logo{font-weight:800;font-size:1.4rem;color:#6c8cff}
+nav a{color:#a8adbd;text-decoration:none;margin-left:28px;font-size:.95rem;transition:color .2s}
+nav a:hover{color:#fff}
+.btn{background:#6c8cff;color:#fff;padding:11px 22px;border-radius:8px;border:none;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .15s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(108,140,255,.35)}
+.hero{padding:90px 0 70px;text-align:center}
+.hero h1{font-size:3.2rem;font-weight:800;letter-spacing:-1px;margin-bottom:18px;background:linear-gradient(90deg,#fff,#9fb2ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.2rem;color:#a8adbd;max-width:600px;margin:0 auto 34px}
+.stats{display:flex;justify-content:center;gap:60px;margin-top:70px;flex-wrap:wrap}
+.stat h3{font-size:2.4rem;color:#6c8cff}
+.stat span{color:#a8adbd;font-size:.9rem}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;padding:70px 0}
+.card{background:#161a26;border:1px solid #1e2230;border-radius:14px;padding:30px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:#6c8cff;transform:translateY(-4px)}
+.card .ic{width:46px;height:46px;background:#6c8cff22;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px}
+.card h3{margin-bottom:10px;font-size:1.2rem}
+.card p{color:#a8adbd;font-size:.95rem}
+.cta{text-align:center;padding:80px 0;background:#161a26;border-radius:20px;margin:40px 0}
+.cta h2{font-size:2.2rem;margin-bottom:16px}
+.cta p{color:#a8adbd;margin-bottom:28px}
+footer{border-top:1px solid #1e2230;padding:30px 0;text-align:center;color:#6b7183;font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="logo">FlowTask</div>
+<nav>
+<a href="#features">Features</a>
+<a href="#pricing">Pricing</a>
+<a href="#">Docs</a>
+<a href="#" class="btn">Start free</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Ship projects, not chaos.</h1>
+<p>FlowTask keeps your team aligned with boards, timelines, and automations that actually save time. No clutter, just flow.</p>
+<a href="#" class="btn">Get started free</a>
+<div class="stats">
+<div class="stat"><h3>12k+</h3><span>Teams onboarded</span></div>
+<div class="stat"><h3>99.9%</h3><span>Uptime</span></div>
+<div class="stat"><h3>4.8★</h3><span>Average rating</span></div>
+</div>
+</section>
+
+<section class="features" id="features">
+<div class="card"><div class="ic">⚡</div><h3>Instant boards</h3><p>Drag-and-drop task boards that update in real time across your whole team.</p></div>
+<div class="card"><div class="ic">🔁</div><h3>Smart automations</h3><p>Trigger actions on status changes so nothing falls through the cracks.</p></div>
+<div class="card"><div class="ic">📊</div><h3>Clear timelines</h3><p>Gantt-style views that make deadlines and dependencies obvious at a glance.</p></div>
+</section>
+
+<section class="cta" id="pricing">
+<h2>Start free. Scale when ready.</h2>
+<p>No credit card required. Upgrade only when your team grows.</p>
+<a href="#" class="btn">Create your workspace</a>
+</section>
+
+<footer>© 2026 FlowTask. Built as a portfolio sample.</footer>
+</div>
+</body>
+</html>

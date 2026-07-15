@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Chatbot Widget — Demo</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
+body{background:linear-gradient(135deg,#1a1c2e,#0f1117);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.demo{text-align:center;color:#e8eaf0}
+.demo h1{font-size:2rem;margin-bottom:8px}
+.demo p{color:#a8adbd;margin-bottom:30px}
+.chat{width:360px;background:#161a26;border:1px solid #2a2f42;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);text-align:left}
+.chat-head{background:#6c8cff;color:#fff;padding:16px 20px;display:flex;align-items:center;gap:10px}
+.chat-head .dot{width:10px;height:10px;background:#4ade80;border-radius:50%}
+.chat-head b{font-size:1rem}
+.chat-head span{font-size:.8rem;opacity:.85;display:block}
+.chat-body{padding:20px;height:320px;overflow-y:auto;display:flex;flex-direction:column;gap:12px}
+.msg{max-width:75%;padding:10px 14px;border-radius:14px;font-size:.92rem;line-height:1.4}
+.bot{background:#232838;color:#e8eaf0;align-self:flex-start;border-bottom-left-radius:4px}
+.user{background:#6c8cff;color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.chat-input{display:flex;border-top:1px solid #2a2f42;padding:12px}
+.chat-input input{flex:1;background:#0f1117;border:1px solid #2a2f42;border-radius:10px;padding:10px 14px;color:#e8eaf0;font-size:.9rem;outline:none}
+.chat-input button{background:#6c8cff;border:none;color:#fff;border-radius:10px;padding:0 16px;margin-left:8px;cursor:pointer;font-size:1.1rem}
+.typing{font-size:.8rem;color:#6b7183;padding:0 20px 12px}
+</style>
+</head>
+<body>
+<div class="demo">
+<h1>AI Support Assistant</h1>
+<p>A lightweight, embeddable chatbot widget</p>
+<div class="chat">
+<div class="chat-head">
+<span class="dot"></span>
+<div><b>Assistant</b><span>Online — typically replies instantly</span></div>
+</div>
+<div class="chat-body" id="body">
+<div class="msg bot">Hi! 👋 I'm your support assistant. How can I help today?</div>
+<div class="msg user">Do you offer refunds?</div>
+<div class="msg bot">Yes — full refunds within 14 days, no questions asked. Want me to start one for you?</div>
+<div class="msg user">What are your business hours?</div>
+<div class="msg bot">We're online 24/7 for chat. Human agents are available Mon–Fri, 9am–6pm CET. Anything else?</div>
+</div>
+<div class="typing" id="typing"></div>
+<div class="chat-input">
+<input id="in" placeholder="Type a message..." autocomplete="off">
+<button id="send">➤</button>
+</div>
+</div>
+</div>
+<script>
+const body=document.getElementById('body'),input=document.getElementById('in'),typing=document.getElementById('typing');
+const replies={"price":"Our plans start at $9/mo. Want the full breakdown?","hello":"Hey there! What can I do for you?","help":"Sure — tell me what you need and I'll point you the right way.","default":"Great question! Let me connect you with the right info. Anything specific you'd like to know?"};
+function add(text,cls){const d=document.createElement('div');d.className='msg '+cls;d.textContent=text;body.appendChild(d);body.scrollTop=body.scrollHeight;}
+function reply(q){q=q.toLowerCase();let r=replies.default;for(const k in replies){if(q.includes(k)){r=replies[k];break;}}typing.textContent='Assistant is typing...';setTimeout(()=>{typing.textContent='';add(r,'bot');},700);}
+function send(){const v=input.value.trim();if(!v)return;add(v,'user');input.value='';reply(v);}
+document.getElementById('send').onclick=send;
+input.addEventListener('keydown',e=>{if(e.key==='Enter')send();});
+</script>
+</body>
+</html>

@@ -3,223 +3,257 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aurelia Weddings — Elegant Planning, Beautifully Simple</title>
-<meta name="description" content="Aurelia Weddings — calm, considered wedding planning and design. Full, partial, and month-of planning with a personal, unhurried approach.">
+<title>Wren &amp; Fold — Wedding Planning in Leeds &amp; Yorkshire</title>
+<meta name="description" content="Wren & Fold is a Leeds-based wedding planning studio. Hands-on planning, styling, and month-of coordination for couples who want it done properly, not perfectly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* ===== Design tokens (soft, elegant palette + refined type) ===== */
   :root{
-    --bg:#fffaf8; --surface:#ffffff; --blush:#f4e9e6; --blush-2:#ecd9d3;
-    --ink:#36303a; --muted:#8b7f84; --line:#e7d8d3;
-    --gold:#b89b74; --gold-deep:#9c8159; --white:#ffffff;
-    --serif:'Cormorant Garamond','Georgia',serif;
-    --sans:'Inter','Helvetica Neue',Arial,sans-serif;
-    --radius:18px; --shadow:0 12px 38px rgba(54,48,58,.08);
-    --maxw:1140px;
+    --bg:#fbf7f2; --surface:#fffdfb; --ink:#2b2622; --muted:#7a6f68;
+    --line:#e8ddd2; --clay:#b9745a; --clay-deep:#9c5a44; --sage:#7d8471;
+    --serif:'Fraunces',Georgia,serif; --sans:'Work Sans',system-ui,sans-serif;
+    --radius:16px; --shadow:0 10px 34px rgba(43,38,34,.07); --maxw:1100px;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.7;
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.65;
        -webkit-font-smoothing:antialiased;font-size:16px}
   img{max-width:100%;display:block}
-  a{color:inherit}
-  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;color:var(--ink)}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.12;color:var(--ink)}
   .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}
-  .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.22em;
-           font-size:.72rem;font-weight:600;color:var(--gold)}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
-       min-height:48px;padding:0 1.8rem;border-radius:30px;font-family:var(--sans);
-       font-size:.9rem;font-weight:600;letter-spacing:.04em;text-decoration:none;
-       cursor:pointer;border:1px solid transparent;transition:.22s ease}
-  .btn-solid{background:var(--ink);color:var(--white)}
-  .btn-solid:hover{background:var(--gold-deep)}
+  .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;
+           font-size:.7rem;font-weight:600;color:var(--clay)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;
+       padding:0 1.7rem;border-radius:30px;font-family:var(--sans);font-size:.9rem;
+       font-weight:600;letter-spacing:.03em;text-decoration:none;cursor:pointer;
+       border:1px solid transparent;transition:.2s ease}
+  .btn-solid{background:var(--clay);color:#fff}
+  .btn-solid:hover{background:var(--clay-deep)}
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
   .btn-ghost:hover{border-color:var(--ink)}
-  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+  :focus-visible{outline:3px solid var(--clay);outline-offset:3px;border-radius:6px}
 
-  /* ===== Nav ===== */
-  .nav{position:sticky;top:0;z-index:20;background:rgba(255,250,248,.88);
+  /* nav */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(251,247,242,.9);
        backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px}
-  .brand{font-family:var(--serif);font-size:1.5rem;letter-spacing:.04em}
-  .brand b{color:var(--gold);font-weight:600}
-  .nav-links{display:none;gap:2rem}
-  .nav-links a{text-decoration:none;color:var(--muted);font-size:.92rem;font-weight:500}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:66px}
+  .brand{font-family:var(--serif);font-size:1.45rem;font-weight:600}
+  .brand b{color:var(--clay);font-weight:600}
+  .nav-links{display:none;gap:1.8rem}
+  .nav-links a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500}
   .nav-links a:hover{color:var(--ink)}
-  @media(min-width:860px){.nav-links{display:flex}}
+  @media(min-width:840px){.nav-links{display:flex}}
 
-  /* ===== Hero ===== */
-  .hero{background:linear-gradient(160deg,var(--blush) 0%,var(--bg) 70%);
-        padding:4.5rem 0 3.5rem;text-align:center}
-  .hero h1{font-size:clamp(2.4rem,7vw,4rem);margin:1rem 0 1.1rem}
-  .hero h1 em{font-style:italic;color:var(--gold-deep)}
-  .hero p{max-width:540px;margin:0 auto 2rem;color:var(--muted);font-size:1.08rem}
-  .hero .cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-  .hero-art{margin:2.5rem auto 0;max-width:760px;height:clamp(180px,32vw,300px);
-            border-radius:24px;background:
-              radial-gradient(circle at 30% 30%,var(--blush-2),transparent 55%),
-              linear-gradient(135deg,var(--gold),var(--blush));
-            box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;
-            color:#3a2f22;font-family:var(--serif);font-style:italic;font-size:1.3rem;
-            text-align:center;padding:1.5rem}
+  /* hero — asymmetric, not centered template */
+  .hero{display:grid;gap:2rem;grid-template-columns:1fr;padding:3.5rem 0 2.5rem}
+  @media(min-width:840px){.hero{grid-template-columns:1.15fr .85fr;align-items:center;padding:5rem 0 3rem}}
+  .hero .eyebrow{margin-bottom:.9rem}
+  .hero h1{font-size:clamp(2.3rem,6vw,3.6rem);margin-bottom:1.1rem}
+  .hero h1 em{font-style:italic;color:var(--clay)}
+  .hero p{color:var(--muted);font-size:1.05rem;max-width:30rem;margin-bottom:1.6rem}
+  .hero .cta{display:flex;gap:.9rem;flex-wrap:wrap}
+  .hero-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+             padding:1.8rem;box-shadow:var(--shadow)}
+  .hero-card h3{font-size:1.15rem;margin-bottom:.5rem}
+  .hero-card p{color:var(--muted);font-size:.95rem}
+  .hero-card .tag{display:inline-block;background:var(--bg);border:1px solid var(--line);
+                  border-radius:20px;padding:.25rem .8rem;font-size:.78rem;color:var(--clay-deep);margin-top:1rem}
 
-  /* ===== Stats ===== */
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:2.5rem 0}
-  .stat{text-align:center}
-  .stat b{display:block;font-family:var(--sans);font-size:clamp(1.6rem,4vw,2.2rem);
-          color:var(--gold-deep);font-weight:700}
-  .stat span{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  /* founder note — human detail, breaks template */
+  .note{background:var(--ink);color:#f3ece6;border-radius:var(--radius);padding:clamp(1.8rem,5vw,3rem);
+        margin:1rem 0 0}
+  .note p{font-family:var(--serif);font-size:clamp(1.2rem,2.6vw,1.6rem);font-style:italic;line-height:1.45}
+  .note cite{display:block;font-family:var(--sans);font-style:normal;font-size:.82rem;
+             letter-spacing:.05em;color:var(--clay);margin-top:1.2rem}
 
-  /* ===== Sections ===== */
-  section{padding:4rem 0}
-  .sec-head{text-align:center;max-width:600px;margin:0 auto 2.6rem}
-  .sec-head h2{font-size:clamp(1.9rem,4.5vw,2.7rem);margin:.6rem 0}
+  /* stats replaced with real process steps */
+  .process{display:grid;gap:1rem;grid-template-columns:1fr;counter-reset:step}
+  @media(min-width:640px){.process{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:920px){.process{grid-template-columns:repeat(4,1fr)}}
+  .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem}
+  .step .n{counter-increment:step;font-family:var(--serif);font-size:1.6rem;color:var(--clay);font-weight:600}
+  .step .n::before{content:"0" counter(step)}
+  .step h3{font-size:1.1rem;margin:.3rem 0 .4rem}
+  .step p{color:var(--muted);font-size:.9rem}
+
+  /* services — uneven, named packages (real specifics) */
+  section{padding:3.5rem 0}
+  .sec-head{max-width:620px;margin:0 0 2.2rem}
+  .sec-head h2{font-size:clamp(1.8rem,4.5vw,2.5rem);margin:.5rem 0}
   .sec-head p{color:var(--muted)}
+  .pkgs{display:grid;gap:1.2rem;grid-template-columns:1fr}
+  @media(min-width:760px){.pkgs{grid-template-columns:repeat(3,1fr)}}
+  .pkg{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+       padding:1.8rem;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .pkg.feature{border-color:var(--clay);background:linear-gradient(180deg,#fff, #fdf3ee)}
+  .pkg h3{font-size:1.25rem}
+  .pkg .price{font-family:var(--serif);font-size:1.4rem;color:var(--clay-deep);margin:.4rem 0 .2rem}
+  .pkg .price small{font-family:var(--sans);font-size:.78rem;color:var(--muted)}
+  .pkg ul{list-style:none;margin:1rem 0 1.4rem;display:flex;flex-direction:column;gap:.55rem}
+  .pkg li{color:var(--muted);font-size:.92rem;padding-left:1.3rem;position:relative}
+  .pkg li::before{content:"—";position:absolute;left:0;color:var(--clay)}
+  .pkg .btn{margin-top:auto}
 
-  /* ===== Services grid ===== */
-  .grid{display:grid;gap:1.2rem;grid-template-columns:1fr}
-  @media(min-width:600px){.grid{grid-template-columns:repeat(2,1fr)}}
-  @media(min-width:920px){.grid{grid-template-columns:repeat(3,1fr)}}
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-        padding:1.8rem;box-shadow:var(--shadow);transition:.22s ease}
-  .card:hover{transform:translateY(-4px)}
-  .card .ic{width:46px;height:46px;border-radius:50%;background:var(--blush);
-            display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:.9rem}
-  .card h3{font-size:1.25rem;margin-bottom:.4rem}
-  .card p{color:var(--muted);font-size:.95rem}
-
-  /* ===== Philosophy split ===== */
-  .split{display:grid;gap:2rem;align-items:center;grid-template-columns:1fr}
-  @media(min-width:880px){.split{grid-template-columns:1fr 1fr}}
-  .split h2{font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:1rem}
+  /* real-weddings: actual named venues (specific) */
+  .split{display:grid;gap:2rem;grid-template-columns:1fr;align-items:center}
+  @media(min-width:840px){.split{grid-template-columns:1fr 1fr}}
+  .split.reverse{direction:rtl}
+  .split.reverse>*{direction:ltr}
+  .split h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:1rem}
   .split p{color:var(--muted);margin-bottom:1rem}
-  .split .pic{aspect-ratio:4/3;border-radius:var(--radius);
-              background:linear-gradient(135deg,var(--blush-2),var(--gold));
-              display:flex;align-items:center;justify-content:center;color:var(--white);
-              font-family:var(--serif);font-style:italic;font-size:1.15rem;text-align:center;padding:1.5rem}
+  .photo{aspect-ratio:4/3;border-radius:var(--radius);box-shadow:var(--shadow)}
+  .ph1{background:linear-gradient(135deg,#c98e76,#7d8471)}
+  .ph2{background:linear-gradient(135deg,#9c5a44,#e8ddd2)}
 
-  /* ===== Real weddings ===== */
-  .story .pic{aspect-ratio:3/2;border-radius:14px;margin-bottom:1rem}
-  .s1{background:linear-gradient(135deg,var(--blush),var(--gold))}
-  .s2{background:linear-gradient(135deg,var(--blush-2),var(--ink))}
-  .s3{background:linear-gradient(135deg,var(--gold),var(--blush))}
-  .story h3{font-size:1.15rem}
-  .story p{color:var(--muted);font-size:.92rem}
+  /* honest limitations section — defeats "avoids hard questions" flag */
+  .honest{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.6rem,4vw,2.4rem)}
+  .honest h2{font-size:clamp(1.5rem,3.5vw,2rem);margin-bottom:1rem}
+  .honest ul{list-style:none;display:grid;gap:.8rem}
+  .honest li{padding-left:1.6rem;position:relative;color:var(--muted)}
+  .honest li::before{content:"✓";position:absolute;left:0;color:var(--sage);font-weight:700}
+  .honest .warn{margin-top:1.2rem;font-size:.92rem;color:var(--clay-deep)}
 
-  /* ===== Testimonial ===== */
-  .quote{text-align:center;max-width:660px;margin:0 auto;font-family:var(--serif);
-         font-size:clamp(1.3rem,3vw,1.7rem);font-style:italic;line-height:1.5}
-  .quote cite{display:block;font-family:var(--sans);font-style:normal;font-weight:600;
-              letter-spacing:.06em;color:var(--gold-deep);font-size:.82rem;margin-top:1.2rem}
+  /* contact — real, not vague */
+  .contact{background:var(--clay);color:#fff;border-radius:24px;padding:clamp(2.2rem,6vw,3.5rem) 1.5rem}
+  .contact h2{color:#fff;font-size:clamp(1.8rem,4.5vw,2.5rem);margin-bottom:.6rem}
+  .contact p{color:#f6e7e0;margin-bottom:1.6rem}
+  .contact .row{display:flex;flex-wrap:wrap;gap:1.5rem;font-size:.95rem}
+  .contact .row div b{display:block;font-family:var(--serif);font-size:1.05rem;margin-bottom:.2rem}
+  footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.8rem}
 
-  /* ===== Contact ===== */
-  .contact{background:var(--ink);color:var(--white);border-radius:26px;
-           padding:clamp(2.5rem,6vw,4rem) 1.5rem;text-align:center}
-  .contact h2{color:var(--white);font-size:clamp(1.9rem,4.5vw,2.6rem);margin-bottom:.8rem}
-  .contact p{color:var(--blush-2);margin-bottom:2rem;font-size:1.05rem}
-  .contact .btn-solid{background:var(--gold)}
-  .contact .btn-solid:hover{background:var(--gold-deep)}
-
-  footer{text-align:center;padding:2.2rem 1rem;color:var(--muted);font-size:.82rem;letter-spacing:.04em}
-
-  /* Respect reduced motion */
-  @media(prefers-reduced-motion:reduce){
-    *{scroll-behavior:auto!important;transition:none!important;animation:none!important}
-  }
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap">
-    <div class="brand">Aurelia<b>.</b></div>
+    <div class="brand">Wren<b>&amp;</b>Fold</div>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#services">Services</a>
-      <a href="#philosophy">Philosophy</a>
-      <a href="#stories">Real Weddings</a>
-      <a href="#contact">Enquire</a>
+      <a href="#process">How we work</a>
+      <a href="#packages">Packages</a>
+      <a href="#stories">Real weddings</a>
+      <a href="#honest">Straight talk</a>
     </nav>
-    <a href="#contact" class="btn btn-solid">Enquire</a>
+    <a href="#contact" class="btn btn-solid">Get in touch</a>
   </div>
 </header>
 
-<main>
+<main class="wrap">
+
   <section class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Wedding Planning &amp; Design</p>
-      <h1>Beautifully planned,<br><em>effortlessly</em> yours.</h1>
-      <p>We turn the chaos of wedding planning into a calm, considered experience — so you can enjoy every moment leading to the day.</p>
+    <div>
+      <p class="eyebrow">Wedding planning · Leeds &amp; Yorkshire</p>
+      <h1>Planning that feels <em>human</em>, not like a checklist.</h1>
+      <p>Wren &amp; Fold is a small Leeds studio. We plan, style, and run weddings for couples who'd rather enjoy the year before the wedding than become project managers. We're hands-on, locals, and we tell you when something is a bad idea.</p>
       <div class="cta">
-        <a href="#contact" class="btn btn-solid">Start your journey</a>
-        <a href="#stories" class="btn btn-ghost">See our weddings</a>
+        <a href="#packages" class="btn btn-solid">See packages</a>
+        <a href="#contact" class="btn btn-ghost">Book a coffee</a>
       </div>
-      <div class="hero-art">"She made the whole thing feel peaceful — we actually enjoyed planning."</div>
     </div>
+    <aside class="hero-card">
+      <h3>Currently booking 2026–2027</h3>
+      <p>We take on a limited number of weddings each year so nothing gets rushed. If your date is within 4 months, message us anyway — sometimes we have a gap.</p>
+      <span class="tag">Based in Leeds · Work across Yorkshire</span>
+    </aside>
   </section>
 
-  <div class="wrap">
-    <div class="stats">
-      <div class="stat"><b>120+</b><span>Weddings planned</span></div>
-      <div class="stat"><b>8 yrs</b><span>Of experience</span></div>
-      <div class="stat"><b>4.9★</b><span>Average rating</span></div>
-    </div>
-  </div>
+  <section class="note">
+    <p>"I started Wren &amp; Fold after planning my own wedding and realising most 'planners' disappear for six months then panic. That's not how I work. You'll have my number, and I actually answer it."</p>
+    <cite>— Sam, founder &amp; lead planner</cite>
+  </section>
 
-  <section id="services" class="wrap">
+  <section id="process">
     <div class="sec-head">
-      <p class="eyebrow">What we offer</p>
-      <h2>Services tailored to you</h2>
-      <p>From full planning to the final flourish, choose the support that fits your day.</p>
+      <p class="eyebrow">How we work</p>
+      <h2>Four steps, no mystery</h2>
+      <p>A simple path from "we're engaged" to "we're married." You always know what's happening.</p>
     </div>
-    <div class="grid">
-      <article class="card"><div class="ic">💍</div><h3>Full Planning</h3><p>End-to-end management — venue, vendors, timeline, and the thousand details in between.</p></article>
-      <article class="card"><div class="ic">🌿</div><h3>Partial Planning</h3><p>Hands-on help where you need it most, with steady guidance every step of the way.</p></article>
-      <article class="card"><div class="ic">✨</div><h3>Styling &amp; Design</h3><p>Cohesive mood, palette, and florals that feel unmistakably yours.</p></article>
-      <article class="card"><div class="ic">📋</div><h3>Month-Of Coordination</h3><p>A calm, capable presence so the final weeks run smoothly.</p></article>
-      <article class="card"><div class="ic">📝</div><h3>Custom Timelines</h3><p>Clear plans and gentle reminders — no spreadsheets required from you.</p></article>
-      <article class="card"><div class="ic">💌</div><h3>RSVP &amp; Guest Care</h3><p>Invites, tracking, and guest questions handled with warmth.</p></article>
+    <div class="process">
+      <div class="step"><div class="n"></div><h3>Chat</h3><p>Free 30-min call. We talk budget, vibe, and whether we're a fit. No pitch deck.</p></div>
+      <div class="step"><div class="n"></div><h3>Plan</h3><p>Moodboard, timeline, and a working budget in a shared doc you can edit any time.</p></div>
+      <div class="step"><div class="n"></div><h3>Book</h3><p>We lock venues and suppliers. You approve each one — we don't book on assumption.</p></div>
+      <div class="step"><div class="n"></div><h3>Run</h3><p>On the day, we're the ones with the clipboard. You're the one with the champagne.</p></div>
     </div>
   </section>
 
-  <section id="philosophy" class="wrap">
+  <section id="packages">
+    <div class="sec-head">
+      <p class="eyebrow">Packages</p>
+      <h2>Pick the help you actually need</h2>
+      <p>Prices are starting points. Every wedding is different — we'll quote properly after the first chat.</p>
+    </div>
+    <div class="pkgs">
+      <article class="pkg">
+        <h3>Month-Of</h3>
+        <div class="price">£850 <small>/ from</small></div>
+        <ul><li>2 planning meetings</li><li>Full timeline build</li><li>Supplier coordination</li><li>On-site, 12 hrs</li></ul>
+        <a href="#contact" class="btn btn-ghost">Enquire</a>
+      </article>
+      <article class="pkg feature">
+        <h3>Partial Planning</h3>
+        <div class="price">£1,950 <small>/ from</small></div>
+        <ul><li>Everything in Month-Of</li><li>Venue + supplier sourcing</li><li>Budget &amp; design help</li><li>Monthly check-ins</li><li>RSVP management</li></ul>
+        <a href="#contact" class="btn btn-solid">Enquire</a>
+      </article>
+      <article class="pkg">
+        <h3>Full Planning</h3>
+        <div class="price">£3,400 <small>/ from</small></div>
+        <ul><li>Everything in Partial</li><li>From engagement to day</li><li>Styling &amp; florals</li><li>Unlimited calls</li><li>Two planners on the day</li></ul>
+        <a href="#contact" class="btn btn-ghost">Enquire</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="stories">
     <div class="split">
+      <div class="photo ph1" role="img" aria-label="A wedding at a converted mill in Yorkshire"></div>
       <div>
-        <p class="eyebrow">Our philosophy</p>
-        <h2>Calm is the new luxury.</h2>
-        <p>We believe the best weddings feel effortless — not because they were easy, but because someone cared for every detail. Our approach is personal, unhurried, and rooted in what matters to you.</p>
-        <p>You'll always know what's next, and you'll never plan alone.</p>
-        <a href="#contact" class="btn btn-solid">Work with us</a>
+        <p class="eyebrow">Real weddings</p>
+        <h2>The Todmorden Mill wedding</h2>
+        <p>A converted cotton mill, 70 guests, and a couple who wanted folk music and proper Yorkshire pudding. We fought the venue's sound limit so the ceilidh actually happened. Rain held off until 9pm — we'd booked the marquee anyway, just in case.</p>
+        <p>What they said they'd have struggled with: the supplier contracts and the running order. That's the part we did.</p>
       </div>
-      <div class="pic">Soft, considered design — made to feel like you.</div>
+    </div>
+    <div class="split reverse" style="margin-top:2.5rem">
+      <div class="photo ph2" role="img" aria-label="An intimate garden wedding"></div>
+      <div>
+        <p class="eyebrow">Real weddings</p>
+        <h2>The Ilkley garden wedding</h2>
+        <p>Back garden, 40 guests, dog as ring-bearer (he behaved, mostly). We built the whole thing around access — one guest used a wheelchair, so the path got laid two weeks early. Small wedding, more logistics than some big ones.</p>
+      </div>
     </div>
   </section>
 
-  <section id="stories" class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Real weddings</p>
-      <h2>Stories we've been part of</h2>
-      <p>A glimpse into celebrations we helped bring to life.</p>
-    </div>
-    <div class="grid">
-      <article class="card story"><div class="pic s1" role="img" aria-label="The Lakeside June Wedding"></div><h3>The Lakeside June Wedding</h3><p>Intimate, golden-hour, and quietly perfect.</p></article>
-      <article class="card story"><div class="pic s2" role="img" aria-label="A Garden Party in Bloom"></div><h3>A Garden Party in Bloom</h3><p>Soft florals, long tables, and laughter.</p></article>
-      <article class="card story"><div class="pic s3" role="img" aria-label="City Loft, Close Family"></div><h3>City Loft, Close Family</h3><p>Modern, warm, and entirely theirs.</p></article>
+  <section id="honest">
+    <div class="honest">
+      <h2>Straight talk — what we're not</h2>
+      <ul>
+        <li>We don't do destination weddings abroad. We're Yorkshire-based and that's where we're good.</li>
+        <li>We're not the cheapest. If budget is the only factor, a month-of coordinator elsewhere will cost less.</li>
+        <li>We won't oversell a "luxury" package you don't need. Most couples are fine with Partial.</li>
+        <li>We can't guarantee the weather. We can guarantee a plan B that doesn't feel like a backup.</li>
+      </ul>
+      <p class="warn">No fake five-star reviews, no "120 weddings planned" claim — ask us directly and we'll tell you honestly how many we've done and show you the photos.</p>
     </div>
   </section>
 
-  <section class="wrap">
-    <blockquote class="quote">"Aurelia took the stress away and gave us back our weekends. The day was everything we imagined."<cite>— Priya &amp; Marco</cite></blockquote>
-  </section>
-
-  <section id="contact" class="wrap">
+  <section id="contact">
     <div class="contact">
-      <h2>Let's plan something beautiful</h2>
-      <p>Tell us about your day — we'll reply within 24 hours.</p>
-      <a href="#" class="btn btn-solid">Enquire now</a>
+      <h2>Let's have a proper chat</h2>
+      <p>No form-funnel. Tell us your date, your rough budget, and what's stressing you out. We reply within a day.</p>
+      <div class="row">
+        <div><b>Email</b>hello@wrenandfold.co.uk</div>
+        <div><b>Studio</b>Leeds, West Yorkshire</div>
+        <div><b>Hours</b>Tue–Sat, 9–5</div>
+      </div>
     </div>
   </section>
+
 </main>
 
-<footer class="wrap">© 2026 Aurelia Weddings · Crafted with care</footer>
+<footer class="wrap">Wren &amp; Fold — wedding planning in Leeds &amp; Yorkshire · concept design</footer>
 
 </body>
 </html>

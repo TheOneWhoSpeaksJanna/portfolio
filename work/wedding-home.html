@@ -4,152 +4,222 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aurelia Weddings — Elegant Planning, Beautifully Simple</title>
+<meta name="description" content="Aurelia Weddings — calm, considered wedding planning and design. Full, partial, and month-of planning with a personal, unhurried approach.">
 <style>
-:root{
-  --blush:#f6e7e4; --blush-deep:#ead0cb; --ink:#3a3338; --muted:#8a7d82;
-  --gold:#bfa07a; --white:#fffaf8; --shadow:0 14px 40px rgba(58,51,56,.10);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Georgia','Times New Roman',serif;color:var(--ink);background:var(--white);line-height:1.7}
-.sans{font-family:'Helvetica Neue',Arial,sans-serif}
-.wrap{max-width:1140px;margin:0 auto;padding:0 1.25rem}
-/* nav */
-nav{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 0;position:sticky;top:0;background:rgba(255,250,248,.9);backdrop-filter:blur(8px);z-index:10}
-.logo{font-size:1.5rem;letter-spacing:2px;color:var(--ink)}
-.logo span{color:var(--gold)}
-nav a{color:var(--muted);text-decoration:none;margin-left:1.8rem;font-size:.9rem;letter-spacing:.5px}
-nav a:hover{color:var(--ink)}
-.btn{background:var(--ink);color:var(--white);padding:.7rem 1.5rem;border-radius:30px;text-decoration:none;font-size:.85rem;letter-spacing:1px;transition:.25s}
-.btn:hover{background:var(--gold)}
-/* hero */
-.hero{background:linear-gradient(135deg,var(--blush),var(--white));padding:5rem 0 4rem;text-align:center}
-.eyebrow{letter-spacing:3px;text-transform:uppercase;font-size:.75rem;color:var(--gold);margin-bottom:1rem}
-.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);font-weight:400;line-height:1.2;margin-bottom:1.2rem}
-.hero h1 em{font-style:italic;color:var(--gold)}
-.hero p{max-width:540px;margin:0 auto 2rem;color:var(--muted);font-size:1.05rem}
-.hero .cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-ghost{border:1px solid var(--ink);background:transparent;color:var(--ink)}
-/* stats */
-.stats{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;padding:2.5rem 0;background:var(--white)}
-.stat{text-align:center}
-.stat b{display:block;font-size:2rem;color:var(--gold);font-family:'Helvetica Neue',Arial,sans-serif}
-.stat span{font-size:.8rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
-/* section */
-section{padding:4.5rem 0}
-.sec-head{text-align:center;margin-bottom:3rem}
-.sec-head .eyebrow{margin-bottom:.6rem}
-.sec-head h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400}
-.sec-head p{color:var(--muted);max-width:520px;margin:1rem auto 0}
-/* services */
-.grid{display:grid;gap:1.5rem;grid-template-columns:1fr}
-@media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:960px){.grid{grid-template-columns:repeat(3,1fr)}}
-.card{background:var(--white);border:1px solid var(--blush-deep);border-radius:16px;padding:2rem;box-shadow:var(--shadow);transition:.25s}
-.card:hover{transform:translateY(-5px)}
-.card .ic{width:50px;height:50px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem}
-.card h3{font-weight:400;font-size:1.25rem;margin-bottom:.6rem}
-.card p{color:var(--muted);font-size:.95rem}
-/* philosophy */
-.philo{background:var(--blush);display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
-@media(min-width:880px){.philo{grid-template-columns:1fr 1fr}}
-.philo .txt h2{font-size:clamp(1.7rem,3.5vw,2.3rem);font-weight:400;margin-bottom:1rem}
-.philo .txt p{color:var(--muted);margin-bottom:1rem}
-.philo .pic{aspect-ratio:4/3;border-radius:16px;background:linear-gradient(135deg,var(--blush-deep),var(--gold));display:flex;align-items:center;justify-content:center;color:var(--white);font-style:italic;font-size:1.1rem;text-align:center;padding:1.5rem}
-/* testimonials */
-.quote{text-align:center;max-width:640px;margin:0 auto;font-style:italic;font-size:1.2rem;color:var(--ink)}
-.quote b{display:block;font-style:normal;margin-top:1rem;color:var(--gold);font-family:'Helvetica Neue',Arial,sans-serif;letter-spacing:1px;font-size:.85rem}
-/* contact */
-.contact{background:var(--ink);color:var(--white);text-align:center;border-radius:24px;padding:3.5rem 1.5rem}
-.contact h2{font-weight:400;font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:.8rem}
-.contact p{color:var(--blush-deep);margin-bottom:2rem}
-.contact .btn{background:var(--gold)}
-footer{text-align:center;padding:2rem;color:var(--muted);font-size:.8rem;letter-spacing:.5px}
+  /* ===== Design tokens (soft, elegant palette + refined type) ===== */
+  :root{
+    --bg:#fffaf8; --surface:#ffffff; --blush:#f4e9e6; --blush-2:#ecd9d3;
+    --ink:#36303a; --muted:#8b7f84; --line:#e7d8d3;
+    --gold:#b89b74; --gold-deep:#9c8159; --white:#ffffff;
+    --serif:'Cormorant Garamond','Georgia',serif;
+    --sans:'Inter','Helvetica Neue',Arial,sans-serif;
+    --radius:18px; --shadow:0 12px 38px rgba(54,48,58,.08);
+    --maxw:1140px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.7;
+       -webkit-font-smoothing:antialiased;font-size:16px}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;color:var(--ink)}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}
+  .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.22em;
+           font-size:.72rem;font-weight:600;color:var(--gold)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+       min-height:48px;padding:0 1.8rem;border-radius:30px;font-family:var(--sans);
+       font-size:.9rem;font-weight:600;letter-spacing:.04em;text-decoration:none;
+       cursor:pointer;border:1px solid transparent;transition:.22s ease}
+  .btn-solid{background:var(--ink);color:var(--white)}
+  .btn-solid:hover{background:var(--gold-deep)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--ink)}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+  /* ===== Nav ===== */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(255,250,248,.88);
+       backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px}
+  .brand{font-family:var(--serif);font-size:1.5rem;letter-spacing:.04em}
+  .brand b{color:var(--gold);font-weight:600}
+  .nav-links{display:none;gap:2rem}
+  .nav-links a{text-decoration:none;color:var(--muted);font-size:.92rem;font-weight:500}
+  .nav-links a:hover{color:var(--ink)}
+  @media(min-width:860px){.nav-links{display:flex}}
+
+  /* ===== Hero ===== */
+  .hero{background:linear-gradient(160deg,var(--blush) 0%,var(--bg) 70%);
+        padding:4.5rem 0 3.5rem;text-align:center}
+  .hero h1{font-size:clamp(2.4rem,7vw,4rem);margin:1rem 0 1.1rem}
+  .hero h1 em{font-style:italic;color:var(--gold-deep)}
+  .hero p{max-width:540px;margin:0 auto 2rem;color:var(--muted);font-size:1.08rem}
+  .hero .cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+  .hero-art{margin:2.5rem auto 0;max-width:760px;height:clamp(180px,32vw,300px);
+            border-radius:24px;background:
+              radial-gradient(circle at 30% 30%,var(--blush-2),transparent 55%),
+              linear-gradient(135deg,var(--gold),var(--blush));
+            box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;
+            color:#3a2f22;font-family:var(--serif);font-style:italic;font-size:1.3rem;
+            text-align:center;padding:1.5rem}
+
+  /* ===== Stats ===== */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:2.5rem 0}
+  .stat{text-align:center}
+  .stat b{display:block;font-family:var(--sans);font-size:clamp(1.6rem,4vw,2.2rem);
+          color:var(--gold-deep);font-weight:700}
+  .stat span{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+  /* ===== Sections ===== */
+  section{padding:4rem 0}
+  .sec-head{text-align:center;max-width:600px;margin:0 auto 2.6rem}
+  .sec-head h2{font-size:clamp(1.9rem,4.5vw,2.7rem);margin:.6rem 0}
+  .sec-head p{color:var(--muted)}
+
+  /* ===== Services grid ===== */
+  .grid{display:grid;gap:1.2rem;grid-template-columns:1fr}
+  @media(min-width:600px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:920px){.grid{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+        padding:1.8rem;box-shadow:var(--shadow);transition:.22s ease}
+  .card:hover{transform:translateY(-4px)}
+  .card .ic{width:46px;height:46px;border-radius:50%;background:var(--blush);
+            display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:.9rem}
+  .card h3{font-size:1.25rem;margin-bottom:.4rem}
+  .card p{color:var(--muted);font-size:.95rem}
+
+  /* ===== Philosophy split ===== */
+  .split{display:grid;gap:2rem;align-items:center;grid-template-columns:1fr}
+  @media(min-width:880px){.split{grid-template-columns:1fr 1fr}}
+  .split h2{font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:1rem}
+  .split p{color:var(--muted);margin-bottom:1rem}
+  .split .pic{aspect-ratio:4/3;border-radius:var(--radius);
+              background:linear-gradient(135deg,var(--blush-2),var(--gold));
+              display:flex;align-items:center;justify-content:center;color:var(--white);
+              font-family:var(--serif);font-style:italic;font-size:1.15rem;text-align:center;padding:1.5rem}
+
+  /* ===== Real weddings ===== */
+  .story .pic{aspect-ratio:3/2;border-radius:14px;margin-bottom:1rem}
+  .s1{background:linear-gradient(135deg,var(--blush),var(--gold))}
+  .s2{background:linear-gradient(135deg,var(--blush-2),var(--ink))}
+  .s3{background:linear-gradient(135deg,var(--gold),var(--blush))}
+  .story h3{font-size:1.15rem}
+  .story p{color:var(--muted);font-size:.92rem}
+
+  /* ===== Testimonial ===== */
+  .quote{text-align:center;max-width:660px;margin:0 auto;font-family:var(--serif);
+         font-size:clamp(1.3rem,3vw,1.7rem);font-style:italic;line-height:1.5}
+  .quote cite{display:block;font-family:var(--sans);font-style:normal;font-weight:600;
+              letter-spacing:.06em;color:var(--gold-deep);font-size:.82rem;margin-top:1.2rem}
+
+  /* ===== Contact ===== */
+  .contact{background:var(--ink);color:var(--white);border-radius:26px;
+           padding:clamp(2.5rem,6vw,4rem) 1.5rem;text-align:center}
+  .contact h2{color:var(--white);font-size:clamp(1.9rem,4.5vw,2.6rem);margin-bottom:.8rem}
+  .contact p{color:var(--blush-2);margin-bottom:2rem;font-size:1.05rem}
+  .contact .btn-solid{background:var(--gold)}
+  .contact .btn-solid:hover{background:var(--gold-deep)}
+
+  footer{text-align:center;padding:2.2rem 1rem;color:var(--muted);font-size:.82rem;letter-spacing:.04em}
+
+  /* Respect reduced motion */
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+  }
 </style>
 </head>
 <body>
 
-<nav class="wrap">
-  <div class="logo">Aurelia<span>.</span></div>
-  <div class="sans">
-    <a href="#services">Services</a>
-    <a href="#philosophy">Philosophy</a>
-    <a href="#stories">Real Weddings</a>
-    <a href="#contact" class="btn">Enquire</a>
-  </div>
-</nav>
-
-<header class="hero">
+<header class="nav">
   <div class="wrap">
-    <div class="eyebrow sans">Wedding Planning &amp; Design</div>
-    <h1>Beautifully planned,<br><em>effortlessly</em> yours.</h1>
-    <p>We turn the chaos of wedding planning into a calm, considered experience — so you can enjoy every moment leading to the day.</p>
-    <div class="cta">
-      <a href="#contact" class="btn sans">Start your journey</a>
-      <a href="#stories" class="btn btn-ghost sans">See our weddings</a>
-    </div>
+    <div class="brand">Aurelia<b>.</b></div>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#stories">Real Weddings</a>
+      <a href="#contact">Enquire</a>
+    </nav>
+    <a href="#contact" class="btn btn-solid">Enquire</a>
   </div>
 </header>
 
-<div class="stats wrap sans">
-  <div class="stat"><b>120+</b><span>Weddings planned</span></div>
-  <div class="stat"><b>8 yrs</b><span>Of experience</span></div>
-  <div class="stat"><b>4.9★</b><span>Average rating</span></div>
-</div>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Wedding Planning &amp; Design</p>
+      <h1>Beautifully planned,<br><em>effortlessly</em> yours.</h1>
+      <p>We turn the chaos of wedding planning into a calm, considered experience — so you can enjoy every moment leading to the day.</p>
+      <div class="cta">
+        <a href="#contact" class="btn btn-solid">Start your journey</a>
+        <a href="#stories" class="btn btn-ghost">See our weddings</a>
+      </div>
+      <div class="hero-art">"She made the whole thing feel peaceful — we actually enjoyed planning."</div>
+    </div>
+  </section>
 
-<section id="services" class="wrap">
-  <div class="sec-head">
-    <div class="eyebrow sans">What we offer</div>
-    <h2>Services tailored to you</h2>
-    <p>From full planning to the final flourish, choose the support that fits your day.</p>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>120+</b><span>Weddings planned</span></div>
+      <div class="stat"><b>8 yrs</b><span>Of experience</span></div>
+      <div class="stat"><b>4.9★</b><span>Average rating</span></div>
+    </div>
   </div>
-  <div class="grid">
-    <div class="card"><div class="ic">💍</div><h3>Full Planning</h3><p>End-to-end management — venue, vendors, timeline, and the thousand details in between.</p></div>
-    <div class="card"><div class="ic">🌿</div><h3>Partial Planning</h3><p>Hands-on help where you need it most, with guidance every step of the way.</p></div>
-    <div class="card"><div class="ic">✨</div><h3>Styling &amp; Design</h3><p>Cohesive mood, palette, and florals that feel unmistakably yours.</p></div>
-    <div class="card"><div class="ic">📋</div><h3>Month-Of Coord.</h3><p>A calm, capable presence so the final weeks run smoothly.</p></div>
-    <div class="card"><div class="ic">📝</div><h3>Custom Timelines</h3><p>Clear plans and gentle reminders — no spreadsheets required from you.</p></div>
-    <div class="card"><div class="ic">💌</div><h3>RSVP &amp; Guest Care</h3><p>Invites, tracking, and guest questions handled with warmth.</p></div>
-  </div>
-</section>
 
-<section id="philosophy" class="wrap philo">
-  <div class="txt">
-    <div class="eyebrow sans">Our philosophy</div>
-    <h2>Calm is the new luxury.</h2>
-    <p>We believe the best weddings feel effortless — not because they were easy, but because someone cared for every detail. Our approach is personal, unhurried, and rooted in what matters to you.</p>
-    <p>You'll always know what's next, and you'll never plan alone.</p>
-    <a href="#contact" class="btn sans">Work with us</a>
-  </div>
-  <div class="pic">"She made the whole thing feel peaceful — we actually enjoyed planning."</div>
-</section>
+  <section id="services" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">What we offer</p>
+      <h2>Services tailored to you</h2>
+      <p>From full planning to the final flourish, choose the support that fits your day.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="ic">💍</div><h3>Full Planning</h3><p>End-to-end management — venue, vendors, timeline, and the thousand details in between.</p></article>
+      <article class="card"><div class="ic">🌿</div><h3>Partial Planning</h3><p>Hands-on help where you need it most, with steady guidance every step of the way.</p></article>
+      <article class="card"><div class="ic">✨</div><h3>Styling &amp; Design</h3><p>Cohesive mood, palette, and florals that feel unmistakably yours.</p></article>
+      <article class="card"><div class="ic">📋</div><h3>Month-Of Coordination</h3><p>A calm, capable presence so the final weeks run smoothly.</p></article>
+      <article class="card"><div class="ic">📝</div><h3>Custom Timelines</h3><p>Clear plans and gentle reminders — no spreadsheets required from you.</p></article>
+      <article class="card"><div class="ic">💌</div><h3>RSVP &amp; Guest Care</h3><p>Invites, tracking, and guest questions handled with warmth.</p></article>
+    </div>
+  </section>
 
-<section id="stories" class="wrap">
-  <div class="sec-head">
-    <div class="eyebrow sans">Real weddings</div>
-    <h2>Stories we've been part of</h2>
-    <p>A glimpse into celebrations we helped bring to life.</p>
-  </div>
-  <div class="grid">
-    <div class="card"><div class="pic" style="aspect-ratio:3/2;border-radius:12px;background:linear-gradient(135deg,var(--blush),var(--gold));margin-bottom:1rem"></div><h3>The Lakeside June Wedding</h3><p>Intimate, golden-hour, and quietly perfect.</p></div>
-    <div class="card"><div class="pic" style="aspect-ratio:3/2;border-radius:12px;background:linear-gradient(135deg,var(--blush-deep),var(--ink));margin-bottom:1rem"></div><h3>A Garden Party in Bloom</h3><p>Soft florals, long tables, and laughter.</p></div>
-    <div class="card"><div class="pic" style="aspect-ratio:3/2;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--blush));margin-bottom:1rem"></div><h3>City Loft, Close Family</h3><p>Modern, warm, and entirely theirs.</p></div>
-  </div>
-</section>
+  <section id="philosophy" class="wrap">
+    <div class="split">
+      <div>
+        <p class="eyebrow">Our philosophy</p>
+        <h2>Calm is the new luxury.</h2>
+        <p>We believe the best weddings feel effortless — not because they were easy, but because someone cared for every detail. Our approach is personal, unhurried, and rooted in what matters to you.</p>
+        <p>You'll always know what's next, and you'll never plan alone.</p>
+        <a href="#contact" class="btn btn-solid">Work with us</a>
+      </div>
+      <div class="pic">Soft, considered design — made to feel like you.</div>
+    </div>
+  </section>
 
-<section class="wrap">
-  <div class="quote">"Aurelia took the stress away and gave us back our weekends. The day was everything we imagined."<b>— Priya &amp; Marco</b></div>
-</section>
+  <section id="stories" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Real weddings</p>
+      <h2>Stories we've been part of</h2>
+      <p>A glimpse into celebrations we helped bring to life.</p>
+    </div>
+    <div class="grid">
+      <article class="card story"><div class="pic s1" role="img" aria-label="The Lakeside June Wedding"></div><h3>The Lakeside June Wedding</h3><p>Intimate, golden-hour, and quietly perfect.</p></article>
+      <article class="card story"><div class="pic s2" role="img" aria-label="A Garden Party in Bloom"></div><h3>A Garden Party in Bloom</h3><p>Soft florals, long tables, and laughter.</p></article>
+      <article class="card story"><div class="pic s3" role="img" aria-label="City Loft, Close Family"></div><h3>City Loft, Close Family</h3><p>Modern, warm, and entirely theirs.</p></article>
+    </div>
+  </section>
 
-<section id="contact" class="wrap">
-  <div class="contact">
-    <h2>Let's plan something beautiful</h2>
-    <p>Tell us about your day — we'll reply within 24 hours.</p>
-    <a href="#" class="btn sans">Enquire now</a>
-  </div>
-</section>
+  <section class="wrap">
+    <blockquote class="quote">"Aurelia took the stress away and gave us back our weekends. The day was everything we imagined."<cite>— Priya &amp; Marco</cite></blockquote>
+  </section>
 
-<footer class="wrap sans">© 2026 Aurelia Weddings · Crafted with care</footer>
+  <section id="contact" class="wrap">
+    <div class="contact">
+      <h2>Let's plan something beautiful</h2>
+      <p>Tell us about your day — we'll reply within 24 hours.</p>
+      <a href="#" class="btn btn-solid">Enquire now</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">© 2026 Aurelia Weddings · Crafted with care</footer>
 
 </body>
 </html>
